@@ -1,6 +1,6 @@
 {
   "name": "rollup-obfuscator-plugin",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A Vite/Rollup plugin for JavaScript obfuscation using javascript-obfuscator",
   "main": "./src/index.js",
   "module": "./src/index.js",
