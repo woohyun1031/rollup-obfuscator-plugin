@@ -1,0 +1,25 @@
+# Source files
+src/
+*.test.ts
+*.spec.ts
+
+# Config files
+tsconfig.json
+tsup.config.ts
+vitest.config.ts
+
+# Development
+node_modules/
+.git/
+.vscode/
+.idea/
+
+# Build artifacts
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+
+# Logs
+*.log
+npm-debug.log*

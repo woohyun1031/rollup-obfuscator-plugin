@@ -1,11 +1,45 @@
 {
   "name": "rollup-obfuscator-plugin",
-  "version": "0.0.0",
-  "main": "dist/index.js",
-  "private": false,
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "version": "0.0.1",
+  "description": "A Vite/Rollup plugin for JavaScript obfuscation using javascript-obfuscator",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run build && npm run test"
+  },
+  "keywords": [
+    "vite",
+    "rollup",
+    "plugin",
+    "obfuscator",
+    "javascript-obfuscator",
+    "obfuscation",
+    "code-protection"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/woohyun1031/rollup-obfuscator-plugin.git"
@@ -16,5 +50,25 @@
     "url": "https://github.com/woohyun1031/rollup-obfuscator-plugin/issues"
   },
   "homepage": "https://github.com/woohyun1031/rollup-obfuscator-plugin#readme",
-  "description": ""
+  "peerDependencies": {
+    "vite": ">=2.0.0"
+  },
+  "peerDependenciesMeta": {
+    "vite": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "javascript-obfuscator": "^4.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.1",
+    "vitest": "^2.1.8"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
 }
