@@ -2,29 +2,30 @@
   "name": "rollup-obfuscator-plugin",
   "version": "0.0.1",
   "description": "A Vite/Rollup plugin for JavaScript obfuscation using javascript-obfuscator",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": {
         "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "default": "./src/index.js"
       },
       "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
+        "types": "./dist/index.d.ts",
+        "default": "./src/index.js"
       }
     }
   },
   "files": [
-    "dist",
+    "src",
+    "dist/*.d.ts",
     "README.md",
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
+    "build": "tsc --emitDeclarationOnly",
+    "dev": "tsc --emitDeclarationOnly --watch",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
@@ -63,7 +64,6 @@
   },
   "devDependencies": {
     "@types/node": "^22.10.1",
-    "tsup": "^8.3.5",
     "typescript": "^5.7.2",
     "vite": "^6.0.1",
     "vitest": "^2.1.8"
