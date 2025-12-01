@@ -60,7 +60,7 @@
     }
   },
   "devDependencies": {
-    "javascript-obfuscator": "^4.1.1",
+    "javascript-obfuscator": "^4.2.0",
     "@types/node": "^22.10.1",
     "typescript": "^5.7.2",
     "vite": "^6.0.1",

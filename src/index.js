@@ -15,7 +15,7 @@ import JavaScriptObfuscator from "javascript-obfuscator";
 export default function javascriptObfuscator(options = {}) {
   return {
     name: "javascript-obfuscator",
-    enforce: "post",
+    // enforce: "post",
     /**
      * @param {string} code - Source code
      * @returns {{code: string, map?: string} | null} Obfuscated code with optional source map
